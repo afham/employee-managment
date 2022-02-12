@@ -1,5 +1,4 @@
 import axios from 'axios';
-import { useDispatch } from 'react-redux';
 
 export const fetchEmployees = () => {
  
@@ -55,14 +54,3 @@ export const updateEmployees = (id,updatedItem) => {
     };
 }
 
-// export const fetchEmployeeDetails = (id) => {   
-//   return async (dispatch) => {  
-//     axios.get(`https://jsonplaceholder.typicode.com/users/${id}`)
-//     .then((response)=>{
-//       dispatch({
-//         type: 'update',
-//         payload: response.data
-//       });
-//     })
-//   };
-// }

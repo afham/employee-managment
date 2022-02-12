@@ -1,11 +1,8 @@
 import {useEffect,useState} from 'react'
 import Employee from './Employee';
-import axios, { Axios } from 'axios'
-import styles from './Home.module.css'
 import { useLocation ,useNavigate } from 'react-router-dom';
 import { useDispatch ,useSelector } from 'react-redux';
 import { fetchEmployees ,addEmployees , deleteEmployees , updateEmployees } from '../redux/actions/employeeActions';
-import store from '../redux/store/store';
 import { Table , Modal , Button , Form } from 'react-bootstrap';
 import { Link } from "react-router-dom";
 import DeleteDialog from './DeleteDialog';
@@ -21,9 +18,7 @@ function Home() {
   const loading=useSelector((state)=>state.employeeReducer.loading);
 
   const [searchBar,setSearchBar] = useState('');
-  // console.log(searchBar,"searchbar")
-  // const filterered = employees.filter((el)=>{el.name.includes(searchBar)})
-  // console.log("filteeres",filterered)
+
   const [itemToUpdate, setItemToUpdate] = useState('')
 
   const [deleteDialog, setDeleteDialog] = useState(false);  
@@ -71,9 +66,6 @@ function Home() {
     setUpdateDialog(false);
   }
 
-  const readClickHandler = (id) => {
-
-  }
   
   const paginate = (pageNumber)=> {
     console.log(pageNumber,"df")
@@ -126,7 +118,7 @@ function Home() {
                   phone ={emp.phone}
                   openDeleteDialog={openDeleteDialog}
                   openUpdateDialog={openUpdateDialog}
-                  readClickHandler={readClickHandler}
+                  
                 />
               ))}
             </tbody>

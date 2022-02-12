@@ -1,7 +1,4 @@
 import React from 'react'
-import styles from './Employee.module.css'
-import { deleteEmployees } from '../redux/actions/employeeActions';
-import { useDispatch } from 'react-redux';
 import { Button } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 const Employee = ({index,id,email,name,phone ,openDeleteDialog,openUpdateDialog }) => {
