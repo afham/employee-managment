@@ -31,7 +31,7 @@ function Home() {
 
   const indexOfLastItem = currentPage*itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-  const currentItems=employees.filter((el)=>el.name.toLowerCase().includes(searchBar)).slice(indexOfFirstItem,indexOfLastItem)
+  const currentItems=employees.filter((el)=>el.name.toLowerCase().includes(searchBar.toLowerCase())).slice(indexOfFirstItem,indexOfLastItem)
  
   useEffect(()=>{
     if(!location.state){
