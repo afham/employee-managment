@@ -44,7 +44,7 @@ export const fetchEmployees = () => {
 export const updateEmployees = (id,updatedItem) => {   
     return async (dispatch) => {  
       dispatch({type:"loading"})
-      axios.delete(`https://jsonplaceholder.typicode.com/users/${id}`,  {name:updatedItem.name,email:updatedItem.email})
+      axios.put(`https://jsonplaceholder.typicode.com/users/${id}`,  {name:updatedItem.name,email:updatedItem.email})
       .then((response)=>{
         dispatch({
           type: 'update',
